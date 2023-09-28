@@ -45,7 +45,7 @@ const Landing = () => {
         />
       </motion.li>
       <motion.li
-        className='text-[var(--text-light)] text-2xl font-semibold'
+        className='text-[var(--text-light)] text-2xl font-medium'
         variants={itemVariants}
       >
         Tim Ionescu

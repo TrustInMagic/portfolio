@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
     <motion.div
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
-      className='fixed top-5 flex justify-between w-full '
+      className='fixed top-5 flex justify-between w-full z-10'
     >
       <div />
       <div className='max-w-[600px] px-3 py-2 rounded-3xl flex gap-7 items-center custom-box-shadow backdrop-blur-lg'>
