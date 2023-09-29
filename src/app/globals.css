@@ -17,5 +17,34 @@ body {
 .custom-box-shadow {
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.22),
     0px 5px 14px 0px rgba(0, 0, 0, 0.18);
+  background-color: hsla(0, 0%, 100%, 0.151);
 }
 
+.custom-text-animation {
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: gradient-animation 20s ease infinite;
+  animation: gradient-animation 20s ease infinite;
+  background: linear-gradient(
+    300deg,
+    #ffee07,
+    #ff2b6a,
+    #ab4bff,
+    #5ca2ff,
+    #df1700
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 360% 360%;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}

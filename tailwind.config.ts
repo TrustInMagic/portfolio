@@ -6,6 +6,7 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -25,6 +26,7 @@ const config: Config = {
           name: 'base',
           selectors: [':root'],
           theme: {
+            themeButton: '#FFFFFF',
             fillings: '#0064ff',
             fillingsDark: '#1d4ed8',
             background: {
@@ -43,13 +45,14 @@ const config: Config = {
           fillings: '#0064ff',
           fillingsDark: '#1d4ed8',
           theme: {
+            themeButton: '#141414',
             background: {
               light: '#1d1d1f',
               dark: '#000000',
             },
             text: {
-              light: '#FFFFFF',
-              dark: '#cfcfcf',
+              light: '#b1b1b1',
+              dark: '#FFFFFF',
             },
           },
         },

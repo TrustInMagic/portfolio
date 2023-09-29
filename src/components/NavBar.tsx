@@ -8,9 +8,21 @@ import CustomLink from './CustomLink';
 import CustomButton from './CustomButton';
 // framer motion
 import { motion } from 'framer-motion';
+// assets
+import logo from '../assets/logo.png';
 // ------------------------------------------------ //
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  landing: React.RefObject<HTMLDivElement>;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ landing }) => {
+  const handleLandingClick = () => {
+    if (landing) {
+      landing.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.div
       initial={{ scale: 0 }}
@@ -19,19 +31,21 @@ const NavBar: React.FC = () => {
     >
       <div />
       <div className='max-w-[600px] px-3 py-2 rounded-3xl flex gap-7 items-center custom-box-shadow backdrop-blur-lg'>
-        <Image
-          src='/assets/logo.png'
-          alt='logo'
-          width={35}
-          height={35}
-          className='rounded-full cursor-pointer'
-          priority
-        />
+        <div onClick={handleLandingClick}>
+          <Image
+            src={logo}
+            alt='logo'
+            width={30}
+            height={30}
+            className='rounded-full cursor-pointer'
+            priority
+          />
+        </div>
         <CustomLink text='About Me' />
         <CustomLink text='Portfolio' />
         <CustomLink text='Skills' />
         <CustomLink text='Resume' />
-        <CustomButton content='Contact' size='small'/>
+        <CustomButton content='Contact' size='small' />
       </div>
       <div />
     </motion.div>

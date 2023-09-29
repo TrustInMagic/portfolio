@@ -2,7 +2,7 @@ import React from 'react';
 // next
 import Image from 'next/image';
 // components
-import CustomButton from '../CustomButton';
+import CustomButton from '@/components/CustomButton';
 // framer motion
 import { motion, Variants } from 'framer-motion';
 // ------------------------------------------------ //
@@ -21,13 +21,13 @@ const Landing = () => {
     <motion.ul
       className='h-screen flex flex-col items-center justify-center gap-8'
       initial='closed'
-      animate='open' 
+      animate='open'
       variants={{
         open: {
           clipPath: 'inset(0% 0% 0% 0% round 10px)',
           transition: {
             type: 'spring',
-            bounce: 20,
+            bounce: 0.4,
             duration: 1,
             delayChildren: 0,
             staggerChildren: 0.15,
