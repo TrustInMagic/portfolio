@@ -35,7 +35,7 @@ const Landing = () => {
         },
       }}
     >
-      <motion.li variants={itemVariants}>
+      <motion.li variants={itemVariants} className='-mt-[35%]'>
         <Image
           src='/assets/me.jpeg'
           alt='Tim'

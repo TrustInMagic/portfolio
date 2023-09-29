@@ -2,10 +2,21 @@ import React from 'react';
 // framer motion
 import { motion } from 'framer-motion';
 // components
-import CustomCard from './components/CustomCard';
+import CustomCard from './components/CustomCard/CustomCard';
+// assets
+import macScreen from '../../assets/mac-screen.png';
+import video from '../../assets/video.mp4';
+import cleanCode from '../../assets/clean-code.png';
+import cleanCodeDark from '../../assets/clean-code-dark.png';
+// next
+import Image from 'next/image';
+// theme
+import { useTheme } from '@/providers/ThemeProvider';
 // ------------------------------------------------ //
 
 const AboutMe = () => {
+  const { theme } = useTheme()!;
+
   const initial = { y: 100, opacity: 0 };
   const appear = {
     y: 0,
@@ -94,7 +105,7 @@ const AboutMe = () => {
           transition={{ duration: 0.2 }}
           viewport={{ once: true }}
         >
-          <CustomCard highlight='20' text='Projects' idx={2} sign='+' />
+          <CustomCard highlight='25' text='Projects' idx={2} sign='+' />
         </motion.div>
         <motion.div
           initial={{ scale: 0 }}
@@ -104,6 +115,55 @@ const AboutMe = () => {
         >
           <CustomCard highlight='100' text='Passion' idx={3} sign='%' />
         </motion.div>
+      </div>
+      <div
+        className='card-box-shadow p-16 rounded-3xl bg-[var(--background-light)] w-full mt-6 flex gap-24 items-center'
+        style={{
+          background: 'linear-gradient(90deg,#e7505e,#cb5891 35%,#a364dc)',
+        }}
+      >
+        <div className='max-w-[500px]'>
+          <div className='text-[#FFFFFF] text-3xl font-semibold'>
+            A little insight into my work
+          </div>
+          <div className='text-[#FFFFFF] mt-6'>
+            Whether elaborately animated or structurally complex projects,
+            {/* eslint-disable-next-line */}
+            you'll find both in my portfolio - because a good developer should
+            be able to pull off both.
+          </div>
+        </div>
+        <div className='relative'>
+          <video
+            className='absolute rounded'
+            style={{ border: 'solid 4px' }}
+            controls
+            muted
+            autoPlay
+            preload='auto'
+            loop
+          >
+            <source src={video} type='video/mp4' />
+          </video>
+          <Image src={macScreen} alt='Mac Screen' />
+        </div>
+      </div>
+      <div className='flex gap-6'>
+        <div className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6'>
+          <div className='text-xl font-semibold text-[var(--text-dark)]'>
+            Clean Code
+          </div>
+          <Image
+            src={theme === 'light' ? cleanCode : cleanCodeDark}
+            alt='Clean Code'
+            className='mt-6'
+          />
+        </div>
+        <div className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6'>
+          <div className='text-xl font-semibold text-[var(--text-dark)]'>
+            Performance Optimization
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -8,10 +8,12 @@ import AboutMe from '@/sections/AboutMe/AboutMe';
 // components
 import ThemeButton from '@/components/ThemeButton';
 import NavBar from '@/components/NavBar';
+// theme
+import { useTheme } from '@/providers/ThemeProvider';
 // ------------------------------------------------ //
 
 export default function Home() {
-  const [theme, setTheme] = React.useState('light');
+  const { theme, setTheme } = useTheme()!;
   const landingRef = React.useRef<HTMLDivElement>(null);
   const aboutMeRef = React.useRef<HTMLDivElement>(null);
 
