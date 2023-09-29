@@ -20,6 +20,10 @@ body {
   background-color: hsla(0, 0%, 100%, 0.151);
 }
 
+.card-box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
 .custom-text-animation {
   -webkit-text-fill-color: transparent;
   -webkit-animation: gradient-animation 20s ease infinite;

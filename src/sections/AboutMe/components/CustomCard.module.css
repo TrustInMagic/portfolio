@@ -1,0 +1,31 @@
+.gradient-0 {
+  background-image: linear-gradient(45deg, #30a8bc, #4dda68);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+}
+
+.gradient-1 {
+  background-image: linear-gradient(315deg, #1860c4, #58d0d9);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+}
+
+.gradient-2 {
+  background-image: linear-gradient(45deg, #5138ec, #b561f9);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+}
+
+.gradient-3 {
+  background-image: linear-gradient(315deg, #c84591, #f7a17b);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+}

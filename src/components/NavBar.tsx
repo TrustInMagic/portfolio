@@ -14,12 +14,19 @@ import logo from '../assets/logo.png';
 
 interface NavBarProps {
   landing: React.RefObject<HTMLDivElement>;
+  about: React.RefObject<HTMLDivElement>;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ landing }) => {
+const NavBar: React.FC<NavBarProps> = ({ landing, about }) => {
   const handleLandingClick = () => {
     if (landing) {
       landing.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleAboutClick = () => {
+    if (about) {
+      about.current?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -41,7 +48,9 @@ const NavBar: React.FC<NavBarProps> = ({ landing }) => {
             priority
           />
         </div>
-        <CustomLink text='About Me' />
+        <div onClick={handleAboutClick}>
+          <CustomLink text='About Me' />
+        </div>
         <CustomLink text='Portfolio' />
         <CustomLink text='Skills' />
         <CustomLink text='Resume' />
