@@ -8,8 +8,6 @@ import CustomLink from './CustomLink';
 import CustomButton from './CustomButton';
 // framer motion
 import { motion } from 'framer-motion';
-// assets
-import logo from '../assets/logo.png';
 // ------------------------------------------------ //
 
 interface NavBarProps {
@@ -40,7 +38,7 @@ const NavBar: React.FC<NavBarProps> = ({ landing, about }) => {
       <div className='max-w-[600px] px-3 py-2 rounded-3xl flex gap-7 items-center custom-box-shadow backdrop-blur-lg'>
         <div onClick={handleLandingClick}>
           <Image
-            src={logo}
+            src='/assets/logo.png'
             alt='logo'
             width={30}
             height={30}
