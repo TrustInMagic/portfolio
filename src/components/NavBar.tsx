@@ -13,9 +13,10 @@ import { motion } from 'framer-motion';
 interface NavBarProps {
   landing: React.RefObject<HTMLDivElement>;
   about: React.RefObject<HTMLDivElement>;
+  portfolio: React.RefObject<HTMLDivElement>;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ landing, about }) => {
+const NavBar: React.FC<NavBarProps> = ({ landing, about, portfolio }) => {
   const handleLandingClick = () => {
     if (landing) {
       landing.current?.scrollIntoView({ behavior: 'smooth' });
@@ -25,6 +26,12 @@ const NavBar: React.FC<NavBarProps> = ({ landing, about }) => {
   const handleAboutClick = () => {
     if (about) {
       about.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handlePortfolioClick = () => {
+    if (portfolio) {
+      portfolio.current?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -49,7 +56,9 @@ const NavBar: React.FC<NavBarProps> = ({ landing, about }) => {
         <div onClick={handleAboutClick}>
           <CustomLink text='About Me' />
         </div>
-        <CustomLink text='Portfolio' />
+        <div onClick={handlePortfolioClick}>
+          <CustomLink text='Portfolio' />
+        </div>
         <CustomLink text='Skills' />
         <CustomLink text='Resume' />
         <CustomButton content='Contact' size='small' />

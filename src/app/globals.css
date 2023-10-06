@@ -24,6 +24,11 @@ body {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
+.project-box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
 .custom-text-animation {
   -webkit-text-fill-color: transparent;
   -webkit-animation: gradient-animation 20s ease infinite;
