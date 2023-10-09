@@ -10,7 +10,7 @@ interface DisplaySkillProps {
 
 const DisplaySkill: React.FC<DisplaySkillProps> = ({ skillImg, name }) => {
   return (
-    <div className='flex flex-col gap-3 items-center'>
+    <div className='flex flex-col gap-3 items-center justify-between'>
       <Image src={skillImg} alt='' width={100} height={100} />
       <div className='text-[var(--text-light)] font-semibold text-base'>
         {name}

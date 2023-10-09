@@ -2,10 +2,14 @@ import React from 'react';
 // next
 import Image from 'next/image';
 // components
-import CustomButton from '@/components/CustomButton';
+import CustomButton from '@/components/CustomButton/CustomButton';
 // framer motion
 import { motion, Variants } from 'framer-motion';
 // ------------------------------------------------ //
+
+interface LandingProps {
+  moreRef: React.RefObject<HTMLDivElement>;
+}
 
 const itemVariants: Variants = {
   open: {
@@ -16,7 +20,13 @@ const itemVariants: Variants = {
   closed: { opacity: 0, y: 120, transition: { duration: 0.3 } },
 };
 
-const Landing = () => {
+const Landing: React.FC<LandingProps> = ({ moreRef }) => {
+  const handleClick = () => {
+    if (moreRef) {
+      moreRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.ul
       className='h-screen flex flex-col items-center justify-center gap-8'
@@ -42,6 +52,7 @@ const Landing = () => {
           width={250}
           height={250}
           className='rounded-full'
+          loading='lazy'
         />
       </motion.li>
       <motion.li
@@ -60,10 +71,10 @@ const Landing = () => {
         className='text-sm text-[var(--text-light)] text-center max-w-[450px] flex'
         variants={itemVariants}
       >
-        I believe in inventive processes & continuous learning. I perpetually
+        I believe in creative processes & continuous learning. I perpetually
         have a curiosity for discovering new best practices and workflows.
       </motion.li>
-      <motion.li variants={itemVariants}>
+      <motion.li variants={itemVariants} onClick={handleClick}>
         <CustomButton content='Find out more ->' size='large' />
       </motion.li>
     </motion.ul>

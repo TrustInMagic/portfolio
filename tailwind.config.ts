@@ -37,6 +37,7 @@ const config: Config = {
               light: '#535355',
               dark: '#1d1d1f',
             },
+            borders: '#e5e7eb',
           },
         },
         {
@@ -54,6 +55,7 @@ const config: Config = {
               light: '#b1b1b1',
               dark: '#FFFFFF',
             },
+            borders: '#1f2937',
           },
         },
       ],

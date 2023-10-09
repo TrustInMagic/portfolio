@@ -8,7 +8,7 @@ import ThemeProvider from '@/providers/ThemeProvider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Tim Ionescu | Frontend Engineer',
+  title: 'Tim Ionescu | Software Engineer',
 };
 
 export default function RootLayout({

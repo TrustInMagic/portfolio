@@ -2,9 +2,13 @@ import React from 'react';
 // components
 import SectionHeader from '../components/SectionHeader';
 import ProjectCard from './components/ProjectCard';
+// next
+import { useRouter } from 'next/navigation';
 // ------------------------------------------------ //
 
 const Projects = () => {
+  const router = useRouter();
+
   return (
     <div className='flex flex-col py-36'>
       <SectionHeader
@@ -33,7 +37,12 @@ const Projects = () => {
           tagPosition='bottom'
         />
       </div>
-      <button className='text-[var(--fillings)] text-xl font-medium mt-20'>Show More</button>
+      <button
+        className='text-[var(--fillings)] text-xl font-medium mt-20'
+        onClick={() => router.push('https://github.com/TrustInMagic')}
+      >
+        Show More
+      </button>
     </div>
   );
 };

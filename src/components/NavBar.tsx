@@ -5,7 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 // components
 import CustomLink from './CustomLink';
-import CustomButton from './CustomButton';
+import CustomButton from './CustomButton/CustomButton';
 // framer motion
 import { motion } from 'framer-motion';
 // ------------------------------------------------ //
@@ -14,9 +14,19 @@ interface NavBarProps {
   landing: React.RefObject<HTMLDivElement>;
   about: React.RefObject<HTMLDivElement>;
   portfolio: React.RefObject<HTMLDivElement>;
+  skills: React.RefObject<HTMLDivElement>;
+  resume: React.RefObject<HTMLDivElement>;
+  contact: React.RefObject<HTMLDivElement>;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ landing, about, portfolio }) => {
+const NavBar: React.FC<NavBarProps> = ({
+  landing,
+  about,
+  portfolio,
+  skills,
+  resume,
+  contact,
+}) => {
   const handleLandingClick = () => {
     if (landing) {
       landing.current?.scrollIntoView({ behavior: 'smooth' });
@@ -32,6 +42,24 @@ const NavBar: React.FC<NavBarProps> = ({ landing, about, portfolio }) => {
   const handlePortfolioClick = () => {
     if (portfolio) {
       portfolio.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSkillsClick = () => {
+    if (skills) {
+      skills.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleResumeClick = () => {
+    if (resume) {
+      resume.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleContactClick = () => {
+    if (contact) {
+      contact.current?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -59,9 +87,15 @@ const NavBar: React.FC<NavBarProps> = ({ landing, about, portfolio }) => {
         <div onClick={handlePortfolioClick}>
           <CustomLink text='Portfolio' />
         </div>
-        <CustomLink text='Skills' />
-        <CustomLink text='Resume' />
-        <CustomButton content='Contact' size='small' />
+        <div onClick={handleSkillsClick}>
+          <CustomLink text='Skills' />
+        </div>
+        <div onClick={handleResumeClick}>
+          <CustomLink text='Resume' />
+        </div>
+        <div onClick={handleContactClick}>
+          <CustomButton content='Contact' size='small' />
+        </div>
       </div>
       <div />
     </motion.div>
