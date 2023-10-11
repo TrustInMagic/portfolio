@@ -1,6 +1,8 @@
 import React from 'react';
 // next
 import Image from 'next/image';
+// sound
+import useSound from 'use-sound';
 // ------------------------------------------------ //
 
 interface ProjectCardProps {
@@ -15,9 +17,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   tagPosition,
 }) => {
   const [visibleTooltip, setVisibleTooltip] = React.useState(false);
+  const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
 
   return (
-    <div className='relative'>
+    <div
+      className='relative'
+      onMouseDown={() => clickSound()}
+      onMouseUp={() => clickSound()}
+    >
       <div
         className='project-box-shadow rounded-2xl cursor-pointer
                   hover:scale-[1.02] transition-transform duration-300 ease-in-out'

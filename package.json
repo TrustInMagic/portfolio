@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "email-js": "^2.0.2",
     "file-loader": "^6.2.0",
     "framer-motion": "^10.16.4",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "tailwindcss-theme-swapper": "^0.7.3"
+    "tailwindcss-theme-swapper": "^0.7.3",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "latest",

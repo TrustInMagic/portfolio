@@ -15,7 +15,9 @@ interface ThemeContextProps {
 const ThemeContext = React.createContext<ThemeContextProps | null>(null);
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = React.useState('light');
+  const [theme, setTheme] = React.useState(
+    window.localStorage.getItem('theme') || 'light'
+  );
 
   const provider = { theme, setTheme };
 

@@ -50,6 +50,20 @@ body {
   background-size: 360% 360%;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 100% 0%;

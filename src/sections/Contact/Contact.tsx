@@ -4,16 +4,27 @@ import styles from './Contact.module.css';
 import SectionHeader from '../components/SectionHeader';
 import CustomButton from '@/components/CustomButton/CustomButton';
 import SocialButton from './components/SocialButton';
-import EmailPopUp from '@/components/Notifications/EmailPopUp';
+import EmailCopyPopUp from '@/components/Notifications/EmailCopyPopUp';
+import EmailSentPopUp from '@/components/Notifications/EmailSentPopUp';
 // framer motion
 import { motion } from 'framer-motion';
 // next
 import { useRouter } from 'next/navigation';
+// emailjs
+import emailjs from '@emailjs/browser';
 // ------------------------------------------------ //
 
+const SERVICE_ID = 'service_igns1cs';
+const TEMPLATE_ID = 'template_0wud21b';
+const PUBLIC_KEY = '02pmUE62badweSV88';
+
 const Contact = () => {
-  const [showPopUp, setShowPopUp] = React.useState(false);
+  const [showCopyPopUp, setShowCopyPopUp] = React.useState(false);
+  const [showSentPopUp, setShowSentPopUp] = React.useState(false);
+  const [disableSubmit, setDisableSubmit] = React.useState(false);
+
   const router = useRouter();
+  const formRef = React.useRef<HTMLFormElement>(null);
 
   const commonStyle =
     'flex-1 bg-[var(--background-dark)] px-3 py-2 rounded-md border-2 text-[var(--text-light)] border-[var(--borders)] focus:border-[var(--fillings)] outline-none';
@@ -21,10 +32,31 @@ const Contact = () => {
   const handleEmailCopy = () => {
     navigator.clipboard.writeText('timionescu@gmail.com');
 
-    setShowPopUp(true);
+    setShowCopyPopUp(true);
     setTimeout(() => {
-      setShowPopUp(false);
+      setShowCopyPopUp(false);
     }, 2000);
+  };
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    setDisableSubmit(true);
+
+    if (formRef.current !== null) {
+      emailjs
+        .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+        .then((result) => {
+          (e.target as HTMLFormElement).reset();
+          setDisableSubmit(false);
+          setShowSentPopUp(true);
+          setTimeout(() => {
+            setShowSentPopUp(false);
+          }, 2000);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   return (
@@ -40,6 +72,8 @@ const Contact = () => {
       </div>
       <div className='grid grid-cols-[1fr_0.4fr] gap-5 mt-8 w-full'>
         <motion.form
+          onSubmit={sendEmail}
+          ref={formRef}
           initial={{ x: -50, opacity: 0 }}
           whileInView={{
             x: 0,
@@ -60,6 +94,7 @@ const Contact = () => {
               id='name'
               type='text'
               className={commonStyle}
+              name='from_name'
               required
             />
             <label htmlFor='email' style={{ display: 'none' }}></label>
@@ -68,15 +103,21 @@ const Contact = () => {
               id='email'
               type='email'
               className={commonStyle}
+              name='from_email'
               required
             />
           </div>
           <textarea
             className={`w-full mt-3 h-[250px] resize-none ${commonStyle} mb-2`}
             placeholder='Your message for me'
+            name='message'
             required
           />
-          <CustomButton content='Submit' size='large' />
+          <CustomButton
+            content='Submit'
+            size='large'
+            disabled={disableSubmit}
+          />
         </motion.form>
         <motion.div
           initial={{ x: 50, opacity: 0 }}
@@ -121,7 +162,8 @@ const Contact = () => {
           </div>
         </motion.div>
       </div>
-      {showPopUp && <EmailPopUp />}
+      {showCopyPopUp && <EmailCopyPopUp />}
+      {showSentPopUp && <EmailSentPopUp />}
     </div>
   );
 };

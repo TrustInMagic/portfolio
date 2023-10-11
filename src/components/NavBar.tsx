@@ -8,6 +8,8 @@ import CustomLink from './CustomLink';
 import CustomButton from './CustomButton/CustomButton';
 // framer motion
 import { motion } from 'framer-motion';
+// sound
+import useSound from 'use-sound';
 // ------------------------------------------------ //
 
 interface NavBarProps {
@@ -27,6 +29,8 @@ const NavBar: React.FC<NavBarProps> = ({
   resume,
   contact,
 }) => {
+  const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
+
   const handleLandingClick = () => {
     if (landing) {
       landing.current?.scrollIntoView({ behavior: 'smooth' });
@@ -71,7 +75,11 @@ const NavBar: React.FC<NavBarProps> = ({
     >
       <div />
       <div className='max-w-[600px] px-3 py-2 rounded-3xl flex gap-7 items-center custom-box-shadow backdrop-blur-lg'>
-        <div onClick={handleLandingClick}>
+        <div
+          onClick={handleLandingClick}
+          onMouseDown={() => clickSound()}
+          onMouseUp={() => clickSound()}
+        >
           <Image
             src='/assets/logo.png'
             alt='logo'
@@ -81,19 +89,39 @@ const NavBar: React.FC<NavBarProps> = ({
             priority
           />
         </div>
-        <div onClick={handleAboutClick}>
+        <div
+          onClick={handleAboutClick}
+          onMouseDown={() => clickSound()}
+          onMouseUp={() => clickSound()}
+        >
           <CustomLink text='About Me' />
         </div>
-        <div onClick={handlePortfolioClick}>
+        <div
+          onClick={handlePortfolioClick}
+          onMouseDown={() => clickSound()}
+          onMouseUp={() => clickSound()}
+        >
           <CustomLink text='Portfolio' />
         </div>
-        <div onClick={handleSkillsClick}>
+        <div
+          onClick={handleSkillsClick}
+          onMouseDown={() => clickSound()}
+          onMouseUp={() => clickSound()}
+        >
           <CustomLink text='Skills' />
         </div>
-        <div onClick={handleResumeClick}>
+        <div
+          onClick={handleResumeClick}
+          onMouseDown={() => clickSound()}
+          onMouseUp={() => clickSound()}
+        >
           <CustomLink text='Resume' />
         </div>
-        <div onClick={handleContactClick}>
+        <div
+          onClick={handleContactClick}
+          onMouseDown={() => clickSound()}
+          onMouseUp={() => clickSound()}
+        >
           <CustomButton content='Contact' size='small' />
         </div>
       </div>

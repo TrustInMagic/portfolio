@@ -1,6 +1,8 @@
 import React from 'react';
 // framer motion
 import { motion } from 'framer-motion';
+// sound
+import useSound from 'use-sound';
 // ------------------------------------------------ //
 
 interface ThemeButtonProps {
@@ -10,9 +12,18 @@ interface ThemeButtonProps {
 
 const ThemeButton: React.FC<ThemeButtonProps> = ({ theme, setTheme }) => {
   const [isHover, setIsHover] = React.useState(false);
+  const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
 
   const handleClick = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setTheme((prev) => {
+      if (prev === 'light') {
+        window.localStorage.setItem('theme', 'dark');
+        return 'dark';
+      } else {
+        window.localStorage.setItem('theme', 'light');
+        return 'light';
+      }
+    });
   };
 
   return (
@@ -26,6 +37,8 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({ theme, setTheme }) => {
       onClick={handleClick}
       onHoverStart={() => setIsHover(true)}
       onHoverEnd={() => setIsHover(false)}
+      onMouseDown={() => clickSound()}
+      onMouseUp={() => clickSound()}
       className='fixed bottom-4 left-3 flex items-center gap-2 px-4 py-3 rounded-2xl font-medium text-sm 
       bg-[var(--theme-button)] hover:bg-[var(--fillings)] text-[var(--text-dark)] hover:text-[#FFFFFF] 
       transition-colors ease-in-out duration-200'

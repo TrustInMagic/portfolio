@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 // ------------------------------------------------ //
 
-const EmailPopUp = () => {
+const EmailSentPopUp = () => {
   return (
     <motion.div
       initial={{ y: -50, opacity: 0 }}
@@ -13,10 +13,10 @@ const EmailPopUp = () => {
       className='fixed top-3 left-3 notification-box-shadow p-3 rounded-xl 
                     bg-[var(--background-light)] text-[var(--text-dark)] flex gap-3'
     >
-      <Image src='/assets/email.svg' alt='' height={25} width={25} />
-      <div>Email Copied!</div>
+      <Image src='/assets/email-sent.svg' alt='' height={25} width={25} />
+      <div>Email Sent!</div>
     </motion.div>
   );
 };
 
-export default EmailPopUp;
+export default EmailSentPopUp;

@@ -45,7 +45,7 @@ const Landing: React.FC<LandingProps> = ({ moreRef }) => {
         },
       }}
     >
-      <motion.li variants={itemVariants} className='-mt-[35%]'>
+      <motion.li variants={itemVariants} className='-mt-[15%]'>
         <Image
           src='/assets/me.jpeg'
           alt='Tim'
@@ -74,8 +74,12 @@ const Landing: React.FC<LandingProps> = ({ moreRef }) => {
         I believe in creative processes & continuous learning. I perpetually
         have a curiosity for discovering new best practices and workflows.
       </motion.li>
-      <motion.li variants={itemVariants} onClick={handleClick}>
-        <CustomButton content='Find out more ->' size='large' />
+      <motion.li variants={itemVariants}>
+        <CustomButton
+          content='Find out more ->'
+          size='large'
+          onClick={handleClick}
+        />
       </motion.li>
     </motion.ul>
   );
