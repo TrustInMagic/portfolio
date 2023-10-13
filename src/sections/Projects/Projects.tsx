@@ -41,14 +41,14 @@ const Projects = () => {
             tagPosition='top'
           />
         </div>
-        <div>
+        <div onClick={() => router.push('/projects/watcher')}>
           <ProjectCard
             projectImg='/assets/watcher.png'
             tag='Market Watcher'
             tagPosition='bottom'
           />
         </div>
-        <div>
+        <div onClick={() => router.push('/projects/goldbach')}>
           <ProjectCard
             projectImg='/assets/goldbach.png'
             tag='Goldbach Prime'

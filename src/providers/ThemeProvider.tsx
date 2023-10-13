@@ -15,9 +15,14 @@ interface ThemeContextProps {
 const ThemeContext = React.createContext<ThemeContextProps | null>(null);
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = React.useState(
-    window.localStorage.getItem('theme') || 'light'
-  );
+  const [theme, setTheme] = React.useState('light');
+
+  React.useEffect(() => {
+    const storedTheme = window.localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []); 
 
   const provider = { theme, setTheme };
 
@@ -26,7 +31,13 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   );
 };
 
-const useTheme = () => React.useContext(ThemeContext);
+const useTheme = () => {
+  const context = React.useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};
 
 export { useTheme };
 export default ThemeProvider;

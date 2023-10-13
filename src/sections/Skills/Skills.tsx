@@ -26,7 +26,7 @@ const Skills = () => {
     <div className='flex flex-col py-36'>
       <SectionHeader
         title='Skills'
-        description='Everything I use to turn an idea into reality'
+        description='What I use to turn an idea into reality'
       />
       <div className='grid grid-cols-10 grid-rows-3 gap-5'>
         <motion.div

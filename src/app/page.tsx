@@ -60,7 +60,7 @@ export default function Home() {
         className='bg-[var(--background-light)] flex justify-center'
         ref={projectsRef}
       >
-        <div className='max-w-screen-xl w-full px-28'>
+        <div className='max-w-screen-xl w-full px-28' id='portfolio'>
           <Projects />
         </div>
       </div>

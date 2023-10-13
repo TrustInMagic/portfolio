@@ -52,7 +52,7 @@ const Landing: React.FC<LandingProps> = ({ moreRef }) => {
           width={250}
           height={250}
           className='rounded-full'
-          loading='lazy'
+          priority
         />
       </motion.li>
       <motion.li
@@ -71,8 +71,8 @@ const Landing: React.FC<LandingProps> = ({ moreRef }) => {
         className='text-sm text-[var(--text-light)] text-center max-w-[450px] flex'
         variants={itemVariants}
       >
-        I believe in creative processes & continuous learning. I perpetually
-        have a curiosity for discovering new best practices and workflows.
+        I am very curious and hungry to constantly learn. I strive to always improve
+        myself and the work that I do by researching new technologies and workflows.
       </motion.li>
       <motion.li variants={itemVariants}>
         <CustomButton

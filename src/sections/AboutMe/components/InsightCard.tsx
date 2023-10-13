@@ -28,13 +28,13 @@ const InsightCard = () => {
     >
       <div className='max-w-[500px]'>
         <div className='text-[#FFFFFF] text-3xl font-semibold'>
-          A little insight into my work
+          A little snapshot of my work
         </div>
         <div className='text-[#FFFFFF] mt-6'>
           Whether elaborately animated or structurally complex projects,
           {/* eslint-disable-next-line */}
-          you'll find both in my portfolio - because a good developer should be
-          able to pull off both.
+          {' '}you'll find both in my portfolio -
+          because a good developer should be able to pull off both.
         </div>
       </div>
       <div className='relative'>
@@ -48,7 +48,7 @@ const InsightCard = () => {
           ref={videoRef}
           onClick={handleVideoClick}
         >
-          <source src='/assets/video.mp4' type='video/mp4' />
+          <source src='/assets/colage-compressed.mp4' type='video/mp4' />
         </video>
         <Image
           src='/assets/mac-screen.png'

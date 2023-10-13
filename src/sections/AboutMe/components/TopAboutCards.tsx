@@ -23,14 +23,13 @@ const TopAboutCards = () => {
           Passionate React developer
         </div>
         <div className='text-[var(--text-light)]'>
-          I initiated my journey into programming with a self-taught approach,
-          beginning with HTML, CSS, and JavaScript. However, the technological
-          landscape has evolved, extending well beyond the realm of vanilla
-          JavaScript. Currently, my toolkit includes TypeScript, integrated
-          within the React framework, and TailwindCSS for aesthetic refinement.
-          On the server side, I utilize Node, coupled with MongoDB for database
-          management. As you can see, I also like to work with motion libraries
-          - e.g. Framer Motion
+          I began programming through self-teaching, starting with Python and
+          completing an advanced course. I transitioned into Frontend
+          development, finding a passion for it due to my visual inclination.
+          Initially working with HTML, CSS, and JavaScript, I quickly fell in love with
+          React, and currently work with TypeScript and TailwindCSS within the
+          framework. My server-side expertise includes Node and MongoDB, and I also
+          enjoy utilizing motion libraries like Framer Motion.
         </div>
       </motion.div>
       <motion.div
