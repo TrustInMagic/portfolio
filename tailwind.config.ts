@@ -16,6 +16,15 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    screens: {
+      'max-1250': { max: '1250px' },
+      'max-1000': { max: '1000px' },
+      'max-850': { max: '850px' },
+      'max-650': { max: '650px' },
+      'max-500': { max: '500px' },
+      'max-410': { max: '410px' },
+      'max-350': { max: '350px' },
+    },
   },
   plugins: [
     themeSwapper({

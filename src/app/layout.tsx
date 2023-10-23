@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 // providers
 import ThemeProvider from '@/providers/ThemeProvider';
+import ScreenSizeProvider from '@/providers/ScreenSizeProvider';
 // ------------------------------------------------ //
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <ThemeProvider>
-        <body className={`${inter.className}`}>
-          {children}
-        </body>
+        <ScreenSizeProvider>
+          <body className={`${inter.className}`}>{children}</body>
+        </ScreenSizeProvider>
       </ThemeProvider>
     </html>
   );

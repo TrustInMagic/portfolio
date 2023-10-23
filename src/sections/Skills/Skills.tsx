@@ -101,10 +101,10 @@ const Skills = () => {
           whileInView='open'
           viewport={{ once: true }}
         >
-          <div>Prototyping</div>
+          <div>Server Side</div>
           <div className='flex justify-between'>
-            <DisplaySkill skillImg='/assets/figma.png' name='Figma' />
-            <DisplaySkill skillImg='/assets/canva.png' name='Canva' />
+            <DisplaySkill skillImg='/assets/node.png' name='Node.js' />
+            <DisplaySkill skillImg='/assets/mongo.png' name='MongoDB' />
           </div>
         </motion.div>
         <motion.div

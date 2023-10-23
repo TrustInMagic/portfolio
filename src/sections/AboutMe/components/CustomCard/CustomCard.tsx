@@ -24,7 +24,9 @@ const CustomCard: React.FC<CustomCardProps> = ({
         className={`${styles[`gradient-${idx}`]}`}
         style={{ display: 'flex' }}
       >
-        <div className={`text-4xl font-bold`}>{highlight}</div>
+        <div className='text-4xl font-bold text-center max-1250:text-2xl max-1000:text-3xl max-410:text-4xl'>
+          {highlight}
+        </div>
         <div
           className='font-bold text-2xl'
           style={{ alignSelf: idx === 3 ? 'end' : 'start' }}

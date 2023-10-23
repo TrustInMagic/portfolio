@@ -3,6 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 // sound
 import useSound from 'use-sound';
+// custom hooks
+import { useScreenSize } from '@/providers/ScreenSizeProvider';
 // ------------------------------------------------ //
 
 interface ThemeButtonProps {
@@ -13,6 +15,7 @@ interface ThemeButtonProps {
 const ThemeButton: React.FC<ThemeButtonProps> = ({ theme, setTheme }) => {
   const [isHover, setIsHover] = React.useState(false);
   const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
+  const { screenWidth } = useScreenSize();
 
   const handleClick = () => {
     setTheme((prev) => {
@@ -112,7 +115,11 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({ theme, setTheme }) => {
           </g>
         </svg>
       )}
-      Turn lights {theme === 'light' ? 'off' : 'on'}
+      {screenWidth > 410 ? (
+        <div>Turn lights {theme === 'light' ? 'off' : 'on'}</div>
+      ) : (
+        ''
+      )}
     </motion.button>
   );
 };

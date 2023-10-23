@@ -25,6 +25,8 @@ export default function Home() {
   const resumeRef = React.useRef<HTMLDivElement>(null);
   const contactRef = React.useRef<HTMLDivElement>(null);
 
+  const sectionCommonStyles = 'max-w-screen-xl w-full px-28 max-850:px-12 max-500:px-3';
+
   return (
     <div className={`h-full ${theme}`}>
       <NavBar
@@ -39,12 +41,12 @@ export default function Home() {
         ref={landingRef}
         className='bg-[var(--background-light)] flex justify-center'
       >
-        <div className='max-w-screen-xl'>
+        <div className={sectionCommonStyles}>
           <Landing moreRef={aboutMeRef} />
         </div>
       </div>
       <div className='bg-[var(--background-light)] flex justify-center'>
-        <div className='max-w-screen-xl'>
+        <div className={sectionCommonStyles}>
           <ColorText />
         </div>
       </div>
@@ -52,7 +54,7 @@ export default function Home() {
         className='bg-[var(--background-dark)] flex justify-center'
         ref={aboutMeRef}
       >
-        <div className='max-w-screen-xl w-full px-28'>
+        <div className={sectionCommonStyles}>
           <AboutMe />
         </div>
       </div>
@@ -60,7 +62,7 @@ export default function Home() {
         className='bg-[var(--background-light)] flex justify-center'
         ref={projectsRef}
       >
-        <div className='max-w-screen-xl w-full px-28' id='portfolio'>
+        <div className={sectionCommonStyles} id='portfolio'>
           <Projects />
         </div>
       </div>
@@ -68,7 +70,7 @@ export default function Home() {
         className='bg-[var(--background-dark)] flex justify-center'
         ref={skillsRef}
       >
-        <div className='max-w-screen-xl w-full px-28'>
+        <div className={sectionCommonStyles}>
           <Skills />
         </div>
       </div>
@@ -76,7 +78,7 @@ export default function Home() {
         className='bg-[var(--background-light)] flex justify-center'
         ref={resumeRef}
       >
-        <div className='max-w-screen-xl w-full px-28'>
+        <div className={sectionCommonStyles}>
           <Resume contactRef={contactRef} />
         </div>
       </div>
@@ -84,7 +86,7 @@ export default function Home() {
         className='bg-[var(--background-dark)] flex justify-center'
         ref={contactRef}
       >
-        <div className='max-w-screen-xl w-full px-28'>
+        <div className={sectionCommonStyles}>
           <Contact />
         </div>
       </div>

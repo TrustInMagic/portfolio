@@ -10,6 +10,8 @@ import CustomButton from './CustomButton/CustomButton';
 import { motion } from 'framer-motion';
 // sound
 import useSound from 'use-sound';
+// custom hooks
+import { useScreenSize } from '@/providers/ScreenSizeProvider';
 // ------------------------------------------------ //
 
 interface NavBarProps {
@@ -30,6 +32,7 @@ const NavBar: React.FC<NavBarProps> = ({
   contact,
 }) => {
   const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
+  const { screenWidth } = useScreenSize();
 
   const handleLandingClick = () => {
     if (landing) {
@@ -74,7 +77,10 @@ const NavBar: React.FC<NavBarProps> = ({
       className='fixed top-5 flex justify-between w-full z-10'
     >
       <div />
-      <div className='max-w-[600px] px-3 py-2 rounded-3xl flex gap-7 items-center custom-box-shadow backdrop-blur-lg'>
+      <div
+        className='max-w-[600px] px-3 py-2 rounded-3xl flex gap-7 items-center custom-box-shadow backdrop-blur-lg
+                      max-650:max-w-[500px] max-500:gap-3 max-410:gap-2'
+      >
         <div
           onClick={handleLandingClick}
           onMouseDown={() => clickSound()}
@@ -85,7 +91,7 @@ const NavBar: React.FC<NavBarProps> = ({
             alt='logo'
             width={30}
             height={30}
-            className='rounded-full cursor-pointer'
+            className='rounded-full cursor-pointer max-650:w-[25px] max-410:w-[20px]'
             priority
           />
         </div>
@@ -94,7 +100,7 @@ const NavBar: React.FC<NavBarProps> = ({
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='About Me' />
+          <CustomLink text='About' />
         </div>
         <div
           onClick={handlePortfolioClick}
@@ -122,7 +128,11 @@ const NavBar: React.FC<NavBarProps> = ({
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomButton content='Contact' size='small' />
+          {screenWidth > 350 ? (
+            <CustomButton content='Contact' size='small' />
+          ) : (
+            <CustomLink text='Contact' />
+          )}
         </div>
       </div>
       <div />

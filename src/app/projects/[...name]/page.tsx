@@ -27,12 +27,13 @@ const MwDescription = () => {
     <>
       <div className={commonDivStyle}>
         This app was constructed for a private client in need of an interface
-        for a cryptocurrency trading system, developed using Golang.
+        for a cryptocurrency trading system (developed using Golang).
       </div>
       <div className={commonDivStyle}>
         Embarking on this project was simultaneously challenging and enjoyable,
         as it required connecting my app to a mock backend service supplied by
-        the client. The “real” Go code was never shared due to privacy concerns.
+        the client. The “real” Go code was never shared due to security
+        concerns.
       </div>
       <div className={commonDivStyle}>
         Ensuring that the mock data structures mirrored the actual ones was
@@ -76,8 +77,12 @@ const GbDescription = () => {
   return (
     <>
       <div className={commonDivStyle}>
-        This public website was developed for a client and tailored to a custom
-        design, ensuring full responsiveness across all screen sizes.
+        This public website (hosted{' '}
+        <a href='https://goldbachprime.com/' className='text-[var(--fillings)]'>
+          here
+        </a>
+        ) was developed for a client and tailored to a custom design, ensuring
+        full responsiveness across all screen sizes.
       </div>
       <div className={commonDivStyle}>
         The project granted me an immersive experience into the intricate
@@ -165,7 +170,37 @@ const MwFeatures = () => {
 };
 
 const GbFeatures = () => {
-  return <></>;
+  return (
+    <ul className='self-start'>
+      <li className={commonLiStyle}>
+        <div className={commonDotStyle} />
+        <div>Tailored design that adapts to any device</div>
+      </li>
+      <li className={commonLiStyle}>
+        <div className={commonDotStyle} />
+        Exclusive registration via invitation codes
+      </li>
+      <li className={commonLiStyle}>
+        <div className={commonDotStyle} />
+        Advanced data checks during user verification
+      </li>
+      <li className={commonLiStyle}>
+        <div className={commonDotStyle} />
+        Robust authorization using JWT technology
+      </li>
+      <li className={commonLiStyle}>
+        <div className={commonDotStyle} />
+        Sophisticated and versatile dashboard accessible post-login
+      </li>
+      <li className={commonLiStyle}>
+        <div className={commonDotStyle} />
+        Public website is hosted{' '}
+        <a href='https://goldbachprime.com/' className='text-[var(--fillings)]'>
+          here
+        </a>
+      </li>
+    </ul>
+  );
 };
 
 const MwStack = () => {
@@ -230,7 +265,7 @@ const Project = () => {
         <div className='mt-8 text-3xl font-bold text-[var(--text-dark)]'>
           <div className='flex'>
             {projectName === 'watcher' ? 'Market Watcher' : 'Goldbach Prime'}
-            <span className='text-2xl ml-[1px]'>®</span>
+            <span className='text-2xl ml-[1px]'>*</span>
           </div>
         </div>
         <div className='text-[var(--text-light)] mt-2'>
@@ -266,6 +301,11 @@ const Project = () => {
           Stack
         </div>
         {projectName === 'watcher' ? <MwStack /> : <GbStack />}
+        <div className={`${commonDivStyle} mt-8`}>
+          *Disclaimer: Due to confidentiality agreements and in respect of my
+          client's privacy, I cannot share the code associated with this
+          project.
+        </div>
       </div>
     </div>
   );

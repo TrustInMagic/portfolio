@@ -17,11 +17,13 @@ const itemVariants: Variants = {
 
 const BottomAboutCard = () => {
   const { theme } = useTheme()!;
+  const commonCardStyle =
+    'text-center text-[var(--text-light)] max-1250:text-sm max-1000:text-base max-500:text-sm';
 
   return (
-    <div className='flex gap-6'>
+    <div className='flex gap-6 max-1000:flex-col'>
       <div className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6'>
-        <div className='text-xl font-semibold text-[var(--text-dark)]'>
+        <div className='text-xl font-semibold text-[var(--text-dark)] max-1000:text-2xl'>
           Clean Code
         </div>
         <Image
@@ -49,10 +51,10 @@ const BottomAboutCard = () => {
           },
         }}
       >
-        <div className='text-xl font-semibold text-[var(--text-dark)]'>
+        <div className='text-xl font-semibold text-[var(--text-dark)] max-1000:text-2xl'>
           Performance Optimization
         </div>
-        <div className='text-sm text-[var(--text-light)]'>
+        <div className='text-sm text-[var(--text-light)] max-1000:text-base'>
           via Google Lighthouse
         </div>
         <div className='mt-10 gap-12 grid grid-cols-4'>
@@ -66,9 +68,7 @@ const BottomAboutCard = () => {
               width={900}
               height={900}
             />
-            <div className='text-center text-[var(--text-light)]'>
-              Performance
-            </div>
+            <div className={commonCardStyle}>Performance</div>
           </motion.li>
           <motion.li
             className='flex flex-col items-center gap-3'
@@ -80,9 +80,7 @@ const BottomAboutCard = () => {
               width={900}
               height={900}
             />
-            <div className='text-center text-[var(--text-light)]'>
-              Accessibility
-            </div>
+            <div className={commonCardStyle}>Accessibility</div>
           </motion.li>
           <motion.li
             className='flex flex-col items-center gap-3'
@@ -94,9 +92,7 @@ const BottomAboutCard = () => {
               width={900}
               height={900}
             />
-            <div className='text-center text-[var(--text-light)]'>
-              Best Practices
-            </div>
+            <div className={commonCardStyle}>Best Practices</div>
           </motion.li>
           <motion.li
             className='flex flex-col items-center gap-3'
@@ -108,7 +104,7 @@ const BottomAboutCard = () => {
               width={900}
               height={900}
             />
-            <div className='text-center text-[var(--text-light)]'>SEO</div>
+            <div className={commonCardStyle}>SEO</div>
           </motion.li>
         </div>
       </motion.ul>

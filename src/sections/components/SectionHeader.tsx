@@ -32,7 +32,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         initial={initial}
         whileInView={appear}
         viewport={{ once: true }}
-        className='text-2xl font-semibold text-[var(--text-light)]'
+        className='text-2xl font-semibold text-[var(--text-light)]
+        max-650:text-xl'
       >
         {title}
       </motion.div>
@@ -40,9 +41,10 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         initial={initial}
         whileInView={appear}
         viewport={{ once: true }}
-        className={`mt-4 font-bold text-6xl text-[var(--text-dark)] ${
+        className={`mt-4 font-bold text-6xl text-[var(--text-dark)] whitespace-nowrap${
           resume ? styles['custom-gradient'] : ''
-        }`}
+        }
+        max-650:text-5xl`}
       >
         {description}
       </motion.div>
