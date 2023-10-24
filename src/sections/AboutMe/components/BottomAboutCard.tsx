@@ -18,12 +18,18 @@ const itemVariants: Variants = {
 const BottomAboutCard = () => {
   const { theme } = useTheme()!;
   const commonCardStyle =
-    'text-center text-[var(--text-light)] max-1250:text-sm max-1000:text-base max-500:text-sm';
+    'text-center text-[var(--text-light)] max-1250:text-sm max-1000:text-base max-500:text-sm max-350:text-xs';
 
   return (
     <div className='flex gap-6 max-1000:flex-col'>
-      <div className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6'>
-        <div className='text-xl font-semibold text-[var(--text-dark)] max-1000:text-2xl'>
+      <div
+        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6
+      max-350:p-4'
+      >
+        <div
+          className='text-xl font-semibold text-[var(--text-dark)] 
+        max-1000:text-2xl max-410:text-xl'
+        >
           Clean Code
         </div>
         <Image
@@ -33,13 +39,13 @@ const BottomAboutCard = () => {
               : '/assets/clean-code-dark.png'
           }
           alt='Clean Code'
-          className='mt-6'
+          className='mt-6 max-350:mt-2'
           width={900}
           height={900}
         />
       </div>
       <motion.ul
-        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6'
+        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6 max-410:p-4'
         initial='closed'
         whileInView='open'
         viewport={{ once: true }}
@@ -51,13 +57,16 @@ const BottomAboutCard = () => {
           },
         }}
       >
-        <div className='text-xl font-semibold text-[var(--text-dark)] max-1000:text-2xl'>
+        <div
+          className='text-xl font-semibold text-[var(--text-dark)] 
+        max-1000:text-2xl max-410:text-xl'
+        >
           Performance Optimization
         </div>
         <div className='text-sm text-[var(--text-light)] max-1000:text-base'>
           via Google Lighthouse
         </div>
-        <div className='mt-10 gap-12 grid grid-cols-4'>
+        <div className='mt-10 gap-12 grid grid-cols-4 max-410:grid-cols-3 max-410:mx-4 max-350:mt-5'>
           <motion.li
             className='flex flex-col items-center gap-3'
             variants={itemVariants}
@@ -95,7 +104,7 @@ const BottomAboutCard = () => {
             <div className={commonCardStyle}>Best Practices</div>
           </motion.li>
           <motion.li
-            className='flex flex-col items-center gap-3'
+            className='flex flex-col items-center gap-3 max-410:hidden'
             variants={itemVariants}
           >
             <Image

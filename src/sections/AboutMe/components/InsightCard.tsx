@@ -22,13 +22,13 @@ const InsightCard = () => {
   return (
     <div
       className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6 flex gap-24 items-center
-      max-1250:gap-10 max-1000:flex-col'
+      max-1250:gap-10 max-1000:flex-col max-410:p-4'
       style={{
         background: 'linear-gradient(90deg,#e7505e,#cb5891 35%,#a364dc)',
       }}
     >
       <div className='max-w-[500px] max-1000:max-w-full'>
-        <div className='text-[#FFFFFF] text-3xl font-semibold'>
+        <div className='text-[#FFFFFF] text-3xl font-semibold max-410:text-2xl'>
           A little snapshot of my work
         </div>
         <div className='text-[#FFFFFF] mt-6'>

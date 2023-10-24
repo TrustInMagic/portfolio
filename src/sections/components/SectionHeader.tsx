@@ -44,7 +44,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         className={`mt-4 font-bold text-6xl text-[var(--text-dark)] whitespace-nowrap${
           resume ? styles['custom-gradient'] : ''
         }
-        max-650:text-5xl`}
+        max-650:text-5xl max-410:text-4xl max-1250:whitespace-normal`}
       >
         {description}
       </motion.div>

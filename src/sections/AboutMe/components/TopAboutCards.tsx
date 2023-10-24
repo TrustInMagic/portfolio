@@ -17,7 +17,7 @@ const TopAboutCards = () => {
         transition={{ duration: 0.2 }}
         viewport={{ once: true }}
         className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] 
-          row-start-1 row-end-3 col-start-1 col-end-2 max-1000:col-end-3'
+          row-start-1 row-end-3 col-start-1 col-end-2 max-1000:col-end-3 max-410:p-4'
       >
         <div className='mb-5 text-2xl font-semibold text-[var(--text-dark)]'>
           Passionate React developer
