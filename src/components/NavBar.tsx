@@ -100,7 +100,7 @@ const NavBar: React.FC<NavBarProps> = ({
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='About' />
+          <CustomLink text='About Me' />
         </div>
         <div
           onClick={handlePortfolioClick}

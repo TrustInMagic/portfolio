@@ -18,7 +18,7 @@ const Projects = () => {
         title='Projects'
         description='A small preview of my projects'
       />
-      <div className='grid grid-cols-2 grid-rows-2 gap-8'>
+      <div className='grid grid-cols-2 grid-rows-2 gap-8 max-1000:flex max-1000:flex-col'>
         <div
           onClick={() =>
             router.push('https://github.com/TrustInMagic/ecommerce-store')

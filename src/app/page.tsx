@@ -25,7 +25,9 @@ export default function Home() {
   const resumeRef = React.useRef<HTMLDivElement>(null);
   const contactRef = React.useRef<HTMLDivElement>(null);
 
-  const sectionCommonStyles = 'max-w-screen-xl w-full px-28 max-850:px-12 max-500:px-3';
+  const sectionCommonStyles =
+    'max-w-screen-xl w-full px-28 max-850:px-12 max-500:px-3';
+  const maxWidthStyle = { maxWidth: '1280px' };
 
   return (
     <div className={`h-full ${theme}`}>
@@ -41,12 +43,12 @@ export default function Home() {
         ref={landingRef}
         className='bg-[var(--background-light)] flex justify-center'
       >
-        <div className={sectionCommonStyles}>
+        <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Landing moreRef={aboutMeRef} />
         </div>
       </div>
       <div className='bg-[var(--background-light)] flex justify-center'>
-        <div className={sectionCommonStyles}>
+        <div className={sectionCommonStyles} style={maxWidthStyle}>
           <ColorText />
         </div>
       </div>
@@ -54,7 +56,7 @@ export default function Home() {
         className='bg-[var(--background-dark)] flex justify-center'
         ref={aboutMeRef}
       >
-        <div className={sectionCommonStyles}>
+        <div className={sectionCommonStyles} style={maxWidthStyle}>
           <AboutMe />
         </div>
       </div>
@@ -62,7 +64,11 @@ export default function Home() {
         className='bg-[var(--background-light)] flex justify-center'
         ref={projectsRef}
       >
-        <div className={sectionCommonStyles} id='portfolio'>
+        <div
+          className={sectionCommonStyles}
+          style={maxWidthStyle}
+          id='portfolio'
+        >
           <Projects />
         </div>
       </div>
@@ -70,7 +76,7 @@ export default function Home() {
         className='bg-[var(--background-dark)] flex justify-center'
         ref={skillsRef}
       >
-        <div className={sectionCommonStyles}>
+        <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Skills />
         </div>
       </div>
@@ -78,7 +84,7 @@ export default function Home() {
         className='bg-[var(--background-light)] flex justify-center'
         ref={resumeRef}
       >
-        <div className={sectionCommonStyles}>
+        <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Resume contactRef={contactRef} />
         </div>
       </div>
@@ -86,7 +92,7 @@ export default function Home() {
         className='bg-[var(--background-dark)] flex justify-center'
         ref={contactRef}
       >
-        <div className={sectionCommonStyles}>
+        <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Contact />
         </div>
       </div>
