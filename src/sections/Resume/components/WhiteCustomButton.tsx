@@ -28,7 +28,8 @@ const WhiteCustomButton: React.FC<CustomButtonPropsExtended> = ({
       onClick={props.onClick}
       className={`text-[#0064ff] rounded-2xl bg-[#FFFF] flex items-center gap-2
       hover:bg-[var(--fillings)] hover:text-[#FFFF] transition-colors ease-in-out duration-200 
-      } ${size === 'large' ? 'text-xl' : ''} ${
+      max-650:text-sm max-410:text-xs
+      ${size === 'large' ? 'text-xl' : ''} ${
         size === 'large' ? 'px-5 py-2' : 'px-4 py-1'
       }`}
     >
