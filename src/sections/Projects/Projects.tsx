@@ -13,7 +13,7 @@ const Projects = () => {
   const router = useRouter();
 
   return (
-    <div className='flex flex-col py-36'>
+    <div className='flex flex-col py-36 max-500:py-20'>
       <SectionHeader
         title='Projects'
         description='A small preview of my projects'

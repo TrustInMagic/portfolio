@@ -21,7 +21,7 @@ const ColorText = () => {
       }}
       viewport={{ once: true }}
       className='text-center flex text-6xl font-bold py-56 justify-center bg-[var(--background-light)]
-      max-1250:text-5xl max-650:text-4xl max-500:text-3xl max-410:text-2xl max-350:text-xl'
+      max-1250:text-5xl max-650:text-4xl max-500:text-3xl max-410:text-2xl max-350:text-xl max-500:py-28'
     >
       <div className='custom-text-animation'>
         Ambitious developer with <br />

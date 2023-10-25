@@ -24,6 +24,7 @@ const config: Config = {
       'max-500': { max: '500px' },
       'max-410': { max: '410px' },
       'max-350': { max: '350px' },
+      short: { raw: '(max-height: 601px)' },
     },
   },
   plugins: [

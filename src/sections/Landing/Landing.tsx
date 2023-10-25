@@ -29,7 +29,8 @@ const Landing: React.FC<LandingProps> = ({ moreRef }) => {
 
   return (
     <motion.ul
-      className='h-screen flex flex-col items-center justify-center gap-8 max-350:gap-5'
+      className='h-screen flex flex-col items-center justify-center gap-8 max-350:gap-5
+      short:h-full'
       initial='closed'
       animate='open'
       variants={{
@@ -45,13 +46,13 @@ const Landing: React.FC<LandingProps> = ({ moreRef }) => {
         },
       }}
     >
-      <motion.li variants={itemVariants} className='-mt-[15%] max-350:-mt-[30%]'>
+      <motion.li variants={itemVariants} className='-mt-[10%] max-350:-mt-[20%] short:mt-[12%]'>
         <Image
           src='/assets/me.jpeg'
           alt='Tim'
           width={250}
           height={250}
-          className='rounded-full max-500:w-[230px]'
+          className='rounded-full max-500:w-[230px] short:w-[200px]'
           priority
         />
       </motion.li>

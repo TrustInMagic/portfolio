@@ -23,7 +23,7 @@ const Skills = () => {
   const { theme } = useTheme()!;
 
   return (
-    <div className='flex flex-col py-36'>
+    <div className='flex flex-col py-36 max-500:py-20'>
       <SectionHeader
         title='Skills'
         description='What I use to turn an idea into reality'

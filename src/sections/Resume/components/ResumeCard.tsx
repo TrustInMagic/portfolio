@@ -27,7 +27,7 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ contactRef }) => {
       className={`rounded-3xl card-box-shadow ${styles['resume-card']} w-[800px] flex pr-10 gap-10 justify-center
       max-1000:w-[700px] max-850:w-[600px] max-850:gap-5 max-650:flex-col max-650:w-[450px]
       max-650:py-10 max-650:px-16 max-650:gap-0 max-650:pb-0 max-500:w-[390px]
-      max-410:w-[260px] max-410:px-8 max-410:py-6`}
+      max-410:w-[350px] max-410:px-8 max-410:py-6 max-350:w-[260px]`}
     >
       {screenWidth > 650 && (
         <Image

@@ -30,7 +30,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className={`cursor-pointer flex gap-3 bg-[var(--background-dark)] text-[var(--text-light)] 
-                    rounded-md p-3 font-semibold w-[500] items-center`}
+                    rounded-md p-3 font-semibold w-[500] items-center max-650:text-sm`}
       style={{
         color: isHover ? '#FFFF' : '',
         background: isHover ? hoverBackground : '',
@@ -41,6 +41,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
         height={20}
         width={20}
         alt=''
+        className='max-650:w-[15px]'
       />
       <div>{text}</div>
     </div>

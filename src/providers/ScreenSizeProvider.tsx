@@ -18,11 +18,14 @@ const ScreenSizeContext = React.createContext<null | ScreenSizeContextProps>(
 const ScreenSizeProvider: React.FC<ScreenSizeProviderProps> = ({
   children,
 }) => {
-  const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = React.useState(0);
+
+  React.useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, []);
 
   React.useEffect(() => {
     const setWidth = () => setScreenWidth(window.innerWidth);
-
     window.addEventListener('resize', setWidth);
 
     return () => window.removeEventListener('resize', setWidth);
