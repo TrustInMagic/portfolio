@@ -17,10 +17,11 @@ const mwSubtitle =
 const gbSubtitle =
   'A custom designed platform featuring a comprehensive login/registration system and a responsive user dashboard';
 const commonLiStyle =
-  'relative mt-1 text-[var(--text-light)] flex items-center gap-2';
+  'relative mt-1 text-[var(--text-light)] flex items-center gap-1 max-410:text-sm';
 const commonDotStyle =
-  'w-2 h-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500';
-const commonDivStyle = 'mt-2 text-[var(--text-light)] self-start';
+  'w-2 h-2 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 display: inline-block';
+const commonDivStyle =
+  'mt-2 text-[var(--text-light)] self-start max-410:text-sm';
 
 const MwDescription = () => {
   return (
@@ -126,44 +127,62 @@ const MwFeatures = () => {
   return (
     <ul className='self-start'>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        <div>Backend connection via Autobahn for real-time data display</div>
+        <div>
+          <div className={commonDotStyle} /> Backend connection via Autobahn for
+          real-time data display
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Display of real-time moving average data
+        <div>
+          <div className={commonDotStyle} /> Display of real-time moving average
+          data
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Custom candle/bar chart built with Apache ECharts to display volume data
+        <div>
+          <div className={commonDotStyle} /> Custom candle/bar chart built with
+          Apache ECharts to display volume data
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Trading volume adjustment via a dropdown, affecting displayed candle/bar
-        data
+        <div>
+          <div className={commonDotStyle} /> Trading volume adjustment via a
+          dropdown, affecting displayed candle/bar data
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Buttons and switches to initiate/terminate trades and manage sub-account
-        trades
+        <div>
+          <div>
+            <div className={commonDotStyle} /> Buttons and switches to
+            initiate/terminate trades and manage sub-account trades
+          </div>
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Complex "Add/Edit" modal, pre-populated with real-time data, to display,
-        collect, and transmit user selection data
+        <div>
+          <div className={commonDotStyle} /> Complex "Add/Edit" modal,
+          pre-populated with real-time data, to display, collect, and transmit
+          user selection data
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Elegant real-time trading data presentation via custom tables
+        <div>
+          <div className={commonDotStyle} /> Elegant real-time trading data
+          presentation via custom tables
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Stylish display and custom formatting of decimal data
+        <div>
+          <div className={commonDotStyle} /> Stylish display and custom
+          formatting of decimal data
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Dedicated "sub-account" page, accessible via specific "sub-account"
-        click, featuring dynamic sub-account data display
+        <div>
+          <div className={commonDotStyle} /> Dedicated "sub-account" page,
+          accessible via specific "sub-account" click, featuring dynamic
+          sub-account data display
+        </div>
       </li>
     </ul>
   );
@@ -173,31 +192,45 @@ const GbFeatures = () => {
   return (
     <ul className='self-start'>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        <div>Tailored design that adapts to any device</div>
+        <div>
+          <div className={commonDotStyle} /> Tailored design that adapts to any
+          device
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Exclusive registration via invitation codes
+        <div>
+          <div className={commonDotStyle} /> Exclusive registration via
+          invitation codes
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Advanced data checks during user verification
+        <div>
+          <div className={commonDotStyle} /> Advanced data checks during user
+          verification
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Robust authorization using JWT technology
+        <div>
+          <div className={commonDotStyle} /> Robust authorization using JWT
+          technology
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Sophisticated and versatile dashboard accessible post-login
+        <div>
+          <div className={commonDotStyle} /> Sophisticated and versatile
+          dashboard accessible post-login
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Public website is hosted{' '}
-        <a href='https://goldbachprime.com/' className='text-[var(--fillings)]'>
-          here
-        </a>
+        <div>
+          <div className={commonDotStyle} /> Public website is hosted{' '}
+          <a
+            href='https://goldbachprime.com/'
+            className='text-[var(--fillings)]'
+          >
+            here
+          </a>
+        </div>
       </li>
     </ul>
   );
@@ -207,20 +240,25 @@ const MwStack = () => {
   return (
     <ul className='self-start'>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Framework: Next.js
+        <div>
+          <div className={commonDotStyle} /> Framework: Next.js
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Language: Typescript
+        <div>
+          <div className={commonDotStyle} /> Language: Typescript
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        CSS Framework: Tailwind
+        <div>
+          <div className={commonDotStyle} /> CSS Framework: Tailwind
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Component Library: Minimals (by MUI)
+        <div>
+          <div className={commonDotStyle} /> Component Library: Minimals (by
+          MUI)
+        </div>
       </li>
     </ul>
   );
@@ -230,16 +268,19 @@ const GbStack = () => {
   return (
     <ul className='self-start'>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Framework: Next.js
+        <div>
+          <div className={commonDotStyle} /> Framework: Next.js
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        Language: Typescript
+        <div>
+          <div className={commonDotStyle} /> Language: Typescript
+        </div>
       </li>
       <li className={commonLiStyle}>
-        <div className={commonDotStyle} />
-        CSS Framework: Tailwind
+        <div>
+          <div className={commonDotStyle} /> CSS Framework: Tailwind
+        </div>
       </li>
     </ul>
   );
@@ -253,22 +294,25 @@ const Project = () => {
 
   return (
     <div className='bg-[var(--background-dark)] h-full flex flex-col items-center'>
-      <div className='flex flex-col items-center w-[1280px] mb-6 relative'>
+      <div
+        className='flex flex-col items-center max-w-[1200px] mb-6 relative p-10 max-1000:p-8 max-850:p-6
+        max-650:p-5 max-500:p-3 max-410:p-2'
+      >
         <button
-          className='absolute left-0 top-1 cursor-pointer text-[var(--fillings)]'
+          className='absolute left-0 top-1 cursor-pointer text-[var(--fillings)] max-410:text-sm'
           onClick={() => router.push('/#portfolio')}
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
           ◄ Back to Portfolio
         </button>
-        <div className='mt-8 text-3xl font-bold text-[var(--text-dark)]'>
+        <div className='mt-8 text-3xl font-bold text-[var(--text-dark)] max-650:mt-10 max-410:text-2xl'>
           <div className='flex'>
             {projectName === 'watcher' ? 'Market Watcher' : 'Goldbach Prime'}
             <span className='text-2xl ml-[1px]'>*</span>
           </div>
         </div>
-        <div className='text-[var(--text-light)] mt-2'>
+        <div className='text-[var(--text-light)] mt-2 text-sm max-410:text-xs'>
           {projectName === 'watcher' ? mwSubtitle : gbSubtitle}
         </div>
         <div className='mt-6 w-full'>
@@ -276,7 +320,7 @@ const Project = () => {
             media={projectName === 'watcher' ? watcherImages : goldbachImages}
           />
         </div>
-        <div className='mt-6 text-xl font-semibold text-[var(--text-dark)] self-start'>
+        <div className='mt-6 text-xl font-semibold text-[var(--text-dark)] self-start max-410:text-base'>
           Description
         </div>
         {projectName === 'watcher' ? <MwDescription /> : <GbDescription />}
@@ -293,15 +337,15 @@ const Project = () => {
               : '/assets/gb/gb-compressed.mp4'
           }
         />
-        <div className='mt-6 text-xl font-semibold text-[var(--text-dark)] self-start'>
+        <div className='mt-6 text-xl font-semibold text-[var(--text-dark)] self-start max-410:text-base'>
           Features
         </div>
         {projectName === 'watcher' ? <MwFeatures /> : <GbFeatures />}
-        <div className='mt-6 text-xl font-semibold text-[var(--text-dark)] self-start'>
+        <div className='mt-6 text-xl font-semibold text-[var(--text-dark)] self-start max-410:text-base'>
           Stack
         </div>
         {projectName === 'watcher' ? <MwStack /> : <GbStack />}
-        <div className={`${commonDivStyle} mt-8`}>
+        <div className={`${commonDivStyle} mt-8 text-sm max-410:text-xs`}>
           *Disclaimer: Due to confidentiality agreements and in respect of my
           client's privacy, I cannot share the code associated with this
           project.

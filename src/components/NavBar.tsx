@@ -5,7 +5,6 @@ import React from 'react';
 import Image from 'next/image';
 // components
 import CustomLink from './CustomLink';
-import CustomButton from './CustomButton/CustomButton';
 // framer motion
 import { motion } from 'framer-motion';
 // sound
@@ -21,6 +20,7 @@ interface NavBarProps {
   skills: React.RefObject<HTMLDivElement>;
   resume: React.RefObject<HTMLDivElement>;
   contact: React.RefObject<HTMLDivElement>;
+  highlight: string;
 }
 
 const NavBar: React.FC<NavBarProps> = ({
@@ -30,6 +30,7 @@ const NavBar: React.FC<NavBarProps> = ({
   skills,
   resume,
   contact,
+  highlight,
 }) => {
   const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
   const { screenWidth } = useScreenSize();
@@ -91,7 +92,7 @@ const NavBar: React.FC<NavBarProps> = ({
             alt='logo'
             width={30}
             height={30}
-            className='rounded-full cursor-pointer max-650:w-[25px] max-410:w-[20px]'
+            className='rounded-full cursor-pointer max-650:w-[25px] max-410:w-[20px] max-350:w-[15px]'
             priority
           />
         </div>
@@ -100,39 +101,38 @@ const NavBar: React.FC<NavBarProps> = ({
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='About Me' />
+          <CustomLink text='About Me' isHighlight={highlight === 'about me'} />
         </div>
         <div
           onClick={handlePortfolioClick}
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='Portfolio' />
+          <CustomLink
+            text='Portfolio'
+            isHighlight={highlight === 'projects'}
+          />
         </div>
         <div
           onClick={handleSkillsClick}
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='Skills' />
+          <CustomLink text='Skills' isHighlight={highlight === 'skills'} />
         </div>
         <div
           onClick={handleResumeClick}
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='Resume' />
+          <CustomLink text='Resume' isHighlight={highlight === 'resume'} />
         </div>
         <div
           onClick={handleContactClick}
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          {screenWidth > 350 ? (
-            <CustomButton content='Contact' size='small' />
-          ) : (
-            <CustomLink text='Contact' />
-          )}
+          <CustomLink text='Contact' isHighlight={highlight === 'contact'} />
         </div>
       </div>
       <div />

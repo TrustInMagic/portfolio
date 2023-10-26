@@ -7,6 +7,8 @@ import CustomButton from '@/components/CustomButton/CustomButton';
 import WhiteCustomButton from './WhiteCustomButton';
 // custom hooks
 import { useScreenSize } from '@/providers/ScreenSizeProvider';
+// assets
+import resume from '../../../assets/tim-resume.pdf';
 // ------------------------------------------------ //
 
 interface ResumeCardProps {
@@ -44,17 +46,19 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ contactRef }) => {
           Additionally, you can download my resume below.
         </div>
         <div className='flex flex-col gap-2'>
-          <CustomButton
-            content='Download CV'
-            size={
-              screenWidth > 850
-                ? 'large'
-                : screenWidth < 650
-                ? 'large'
-                : 'small'
-            }
-            image='/assets/download.svg'
-          />
+          <a href={resume} download='Resume' target='_blank' rel='noreferrer'>
+            <CustomButton
+              content='Download CV'
+              size={
+                screenWidth > 850
+                  ? 'large'
+                  : screenWidth < 650
+                  ? 'large'
+                  : 'small'
+              }
+              image='/assets/download.svg'
+            />
+          </a>
           <WhiteCustomButton
             content='Contact me'
             size={

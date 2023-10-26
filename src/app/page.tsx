@@ -14,10 +14,12 @@ import ThemeButton from '@/components/ThemeButton';
 import NavBar from '@/components/NavBar';
 // theme
 import { useTheme } from '@/providers/ThemeProvider';
+// custom hooks
+import useIsInViewport from '@/utils/useIsInViewport';
 // ------------------------------------------------ //
 
 export default function Home() {
-  const { theme, setTheme } = useTheme()!;
+  const { theme, setTheme } = useTheme();
   const landingRef = React.useRef<HTMLDivElement>(null);
   const aboutMeRef = React.useRef<HTMLDivElement>(null);
   const projectsRef = React.useRef<HTMLDivElement>(null);
@@ -29,6 +31,17 @@ export default function Home() {
     'max-w-screen-xl w-full px-28 max-850:px-12 max-500:px-3';
   const maxWidthStyle = { maxWidth: '1280px' };
 
+  const sectionRefs = [
+    landingRef,
+    aboutMeRef,
+    projectsRef,
+    skillsRef,
+    resumeRef,
+    contactRef,
+  ];
+
+  const highlight = useIsInViewport(sectionRefs);
+
   return (
     <div className={`h-full ${theme}`}>
       <NavBar
@@ -38,10 +51,12 @@ export default function Home() {
         skills={skillsRef}
         resume={resumeRef}
         contact={contactRef}
+        highlight={highlight}
       />
       <div
-        ref={landingRef}
         className='bg-[var(--background-light)] flex justify-center'
+        ref={landingRef}
+        id='landing'
       >
         <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Landing moreRef={aboutMeRef} />
@@ -55,6 +70,7 @@ export default function Home() {
       <div
         className='bg-[var(--background-dark)] flex justify-center'
         ref={aboutMeRef}
+        id='about me'
       >
         <div className={sectionCommonStyles} style={maxWidthStyle}>
           <AboutMe />
@@ -63,6 +79,7 @@ export default function Home() {
       <div
         className='bg-[var(--background-light)] flex justify-center'
         ref={projectsRef}
+        id='projects'
       >
         <div
           className={sectionCommonStyles}
@@ -75,6 +92,7 @@ export default function Home() {
       <div
         className='bg-[var(--background-dark)] flex justify-center'
         ref={skillsRef}
+        id='skills'
       >
         <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Skills />
@@ -83,6 +101,7 @@ export default function Home() {
       <div
         className='bg-[var(--background-light)] flex justify-center'
         ref={resumeRef}
+        id='resume'
       >
         <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Resume contactRef={contactRef} />
@@ -91,6 +110,7 @@ export default function Home() {
       <div
         className='bg-[var(--background-dark)] flex justify-center'
         ref={contactRef}
+        id='contact'
       >
         <div className={sectionCommonStyles} style={maxWidthStyle}>
           <Contact />

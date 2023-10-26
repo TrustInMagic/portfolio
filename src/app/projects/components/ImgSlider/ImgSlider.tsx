@@ -6,7 +6,11 @@ import ArrowSvg from '../ArrowSvg';
 import Image from 'next/image';
 // ------------------------------------------------ //
 
-const ImgSlider = ({ media }) => {
+interface ImgSliderProps {
+  media: string[];
+}
+
+const ImgSlider: React.FC<ImgSliderProps> = ({ media }) => {
   const [activeImgIdx, setActiveImgIdx] = React.useState(0);
 
   const displayNextImg = () => {

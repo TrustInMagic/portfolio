@@ -6,11 +6,14 @@ import ProjectCard from './components/ProjectCard';
 import { useRouter } from 'next/navigation';
 // sound
 import useSound from 'use-sound';
+// custom hooks
+import { useScreenSize } from '@/providers/ScreenSizeProvider';
 // ------------------------------------------------ //
 
 const Projects = () => {
   const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
   const router = useRouter();
+  const { screenWidth } = useScreenSize();
 
   return (
     <div className='flex flex-col py-36 max-500:py-20'>
@@ -18,7 +21,7 @@ const Projects = () => {
         title='Projects'
         description='A small preview of my projects'
       />
-      <div className='grid grid-cols-2 grid-rows-2 gap-8 max-1000:flex max-1000:flex-col'>
+      <div className='grid grid-cols-2 grid-rows-2 gap-8 max-1000:flex max-1000:flex-col max-1000:gap-12'>
         <div
           onClick={() =>
             router.push('https://github.com/TrustInMagic/ecommerce-store')
@@ -45,14 +48,14 @@ const Projects = () => {
           <ProjectCard
             projectImg='/assets/watcher.png'
             tag='Market Watcher'
-            tagPosition='bottom'
+            tagPosition={screenWidth > 1000 ? 'bottom' : 'top'}
           />
         </div>
         <div onClick={() => router.push('/projects/goldbach')}>
           <ProjectCard
             projectImg='/assets/goldbach.png'
             tag='Goldbach Prime'
-            tagPosition='bottom'
+            tagPosition={screenWidth > 1000 ? 'bottom' : 'top'}
           />
         </div>
       </div>

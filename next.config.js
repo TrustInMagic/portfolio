@@ -2,7 +2,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config, { isServer }) => {
-    // Modify the config
     config.module.rules.push({
       test: /\.mp4$/,
       use: {
@@ -16,7 +15,19 @@ const nextConfig = {
       },
     });
 
-    // Important: return the modified config
+    config.module.rules.push({
+      test: /\.pdf$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: 'static/pdfs/[name].[hash].[ext]',
+          publicPath: '_next/static/pdfs/',
+          outputPath: 'static/pdfs/',
+          context: '',
+        },
+      },
+    });
+
     return config;
   },
 };
