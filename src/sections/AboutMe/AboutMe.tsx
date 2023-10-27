@@ -2,7 +2,7 @@ import React from 'react';
 // components
 import TopAboutCards from './components/TopAboutCards';
 import InsightCard from './components/InsightCard';
-import BottomAboutCard from './components/BottomAboutCard';
+import BottomAboutCard from './components/BottomAboutCards/BottomAboutCard';
 import SectionHeader from '../components/SectionHeader';
 // ------------------------------------------------ //
 

@@ -1,8 +1,9 @@
 import React from 'react';
 // next
 import Image from 'next/image';
-// theme
-import { useTheme } from '@/providers/ThemeProvider';
+// components
+import CleanCode from './components/CleanCode';
+import PerformanceCircle from './components/PerformanceCircle/PerformanceCircle';
 // framer motion
 import { motion, Variants } from 'framer-motion';
 // ------------------------------------------------ //
@@ -16,15 +17,14 @@ const itemVariants: Variants = {
 };
 
 const BottomAboutCard = () => {
-  const { theme } = useTheme()!;
   const commonCardStyle =
-    'text-center text-[var(--text-light)] max-1250:text-sm max-1000:text-base max-500:text-sm max-350:text-xs';
+    'text-center text-[var(--text-light)] max-1250:text-sm max-1000:text-base max-500:text-sm max-350:text-xs whitespace-nowrap';
 
   return (
     <div className='flex gap-6 max-1000:flex-col'>
       <div
         className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6
-      max-350:p-4'
+      max-350:p-4 flex flex-col'
       >
         <div
           className='text-xl font-semibold text-[var(--text-dark)] 
@@ -32,17 +32,9 @@ const BottomAboutCard = () => {
         >
           Clean Code
         </div>
-        <Image
-          src={
-            theme === 'light'
-              ? '/assets/clean-code.png'
-              : '/assets/clean-code-dark.png'
-          }
-          alt='Clean Code'
-          className='mt-6 max-350:mt-2'
-          width={900}
-          height={900}
-        />
+        <div className='mt-4'>
+          <CleanCode />
+        </div>
       </div>
       <motion.ul
         className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6 max-410:p-4'
@@ -71,35 +63,24 @@ const BottomAboutCard = () => {
             className='flex flex-col items-center gap-3'
             variants={itemVariants}
           >
-            <Image
-              src='/assets/lighthouse-100.png'
-              alt=''
-              width={900}
-              height={900}
-            />
+            <PerformanceCircle value={93} strokeDashX={327} strokeDashY={351} />
             <div className={commonCardStyle}>Performance</div>
           </motion.li>
           <motion.li
             className='flex flex-col items-center gap-3'
             variants={itemVariants}
           >
-            <Image
-              src='/assets/lighthouse-97.png'
-              alt=''
-              width={900}
-              height={900}
-            />
+            <PerformanceCircle value={99} strokeDashX={340} strokeDashY={351} />
             <div className={commonCardStyle}>Accessibility</div>
           </motion.li>
           <motion.li
             className='flex flex-col items-center gap-3'
             variants={itemVariants}
           >
-            <Image
-              src='/assets/lighthouse-100.png'
-              alt=''
-              width={900}
-              height={900}
+            <PerformanceCircle
+              value={100}
+              strokeDashX={360}
+              strokeDashY={360}
             />
             <div className={commonCardStyle}>Best Practices</div>
           </motion.li>
@@ -107,11 +88,10 @@ const BottomAboutCard = () => {
             className='flex flex-col items-center gap-3 max-410:hidden'
             variants={itemVariants}
           >
-            <Image
-              src='/assets/lighthouse-100.png'
-              alt=''
-              width={900}
-              height={900}
+            <PerformanceCircle
+              value={100}
+              strokeDashX={360}
+              strokeDashY={360}
             />
             <div className={commonCardStyle}>SEO</div>
           </motion.li>

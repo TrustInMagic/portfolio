@@ -3,22 +3,18 @@ import React from 'react';
 const useIsInViewport = (refArray: React.RefObject<Element>[]) => {
   const [inViewport, setInViewport] = React.useState('');
 
-  const observer = React.useMemo(
-    () =>
-      new IntersectionObserver(
-        (entryArr) => {
-          entryArr.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setInViewport(entry.target.id);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      ),
-    []
-  );
-
   React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entryArr) => {
+        entryArr.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInViewport(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-50%' }
+    );
+
     refArray.forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current);
@@ -26,7 +22,7 @@ const useIsInViewport = (refArray: React.RefObject<Element>[]) => {
     });
 
     return () => observer.disconnect();
-  }, [refArray, observer]);
+  }, [refArray]);
 
   return inViewport;
 };

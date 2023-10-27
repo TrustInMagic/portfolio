@@ -1,0 +1,58 @@
+.svg {
+  color: #0cce6b;
+  fill: #0cce6b;
+  stroke: #0cce6b;
+  width: 90px;
+  height: 90px;
+}
+
+.circle-base {
+  color: #0cce6b;
+  fill: #0cce6b;
+  stroke: #0cce6b;
+  stroke-width: 8;
+  opacity: 0.1;
+}
+
+.circle-arc {
+  color: #0cce6b;
+  stroke: #0cce6b;
+  stroke-width: 8;
+  fill: none;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 100px 60px;
+}
+
+.value {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1250px) {
+  .svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .svg {
+    width: 50px;
+    height: 50px;
+  }
+}

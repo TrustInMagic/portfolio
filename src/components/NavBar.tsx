@@ -9,8 +9,6 @@ import CustomLink from './CustomLink';
 import { motion } from 'framer-motion';
 // sound
 import useSound from 'use-sound';
-// custom hooks
-import { useScreenSize } from '@/providers/ScreenSizeProvider';
 // ------------------------------------------------ //
 
 interface NavBarProps {
@@ -33,7 +31,6 @@ const NavBar: React.FC<NavBarProps> = ({
   highlight,
 }) => {
   const [clickSound] = useSound('/assets/click_1.mp3', { volume: 0.25 });
-  const { screenWidth } = useScreenSize();
 
   const handleLandingClick = () => {
     if (landing) {
@@ -71,6 +68,8 @@ const NavBar: React.FC<NavBarProps> = ({
     }
   };
 
+  console.log(highlight)
+
   return (
     <motion.div
       initial={{ scale: 0 }}
@@ -101,7 +100,7 @@ const NavBar: React.FC<NavBarProps> = ({
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >
-          <CustomLink text='About Me' isHighlight={highlight === 'about me'} />
+          <CustomLink text='About Me' isHighlight={highlight === 'about'} />
         </div>
         <div
           onClick={handlePortfolioClick}

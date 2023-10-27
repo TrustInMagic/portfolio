@@ -70,7 +70,7 @@ export default function Home() {
       <div
         className='bg-[var(--background-dark)] flex justify-center'
         ref={aboutMeRef}
-        id='about me'
+        id='about'
       >
         <div className={sectionCommonStyles} style={maxWidthStyle}>
           <AboutMe />
@@ -84,7 +84,6 @@ export default function Home() {
         <div
           className={sectionCommonStyles}
           style={maxWidthStyle}
-          id='portfolio'
         >
           <Projects />
         </div>
