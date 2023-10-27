@@ -28,23 +28,23 @@ const PerformanceCircle: React.FC<PerformanceCircleProps> = ({
         r='56'
         cx='100'
         cy='60'
-        stroke-width='8'
+        strokeWidth='8'
       />
       <circle
         className={styles['circle-arc']}
         r='56'
         cx='100'
         cy='60'
-        stroke-width='8'
+        strokeWidth='8'
         style={{ strokeDasharray: `${strokeDashX}, ${strokeDashY}` }}
       />
       <text
         className={styles.value}
         x='100px'
         y='60px'
-        alignment-baseline='central'
-        dominant-baseline='central'
-        text-anchor='middle'
+        alignmentBaseline='central'
+        dominantBaseline='central'
+        textAnchor='middle'
       >
         {value}
       </text>

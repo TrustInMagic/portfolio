@@ -68,8 +68,6 @@ const NavBar: React.FC<NavBarProps> = ({
     }
   };
 
-  console.log(highlight)
-
   return (
     <motion.div
       initial={{ scale: 0 }}
