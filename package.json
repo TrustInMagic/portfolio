@@ -13,7 +13,7 @@
     "email-js": "^2.0.2",
     "file-loader": "^6.2.0",
     "framer-motion": "^10.16.4",
-    "next": "latest",
+    "next": "13.4.12",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss-theme-swapper": "^0.7.3",

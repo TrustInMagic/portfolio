@@ -40,7 +40,7 @@ const InsightCard = () => {
       </div>
       <div className='relative'>
         <video
-          className='absolute rounded'
+          className='absolute rounded max-w-full max-h-full'
           style={{ border: 'solid 4px' }}
           muted
           autoPlay
