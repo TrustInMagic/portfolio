@@ -1,7 +1,7 @@
 import React from 'react';
 // ------------------------------------------------ //
 
-const ArrowSvg = ({ path }) => {
+const ArrowSvg = ({ path }: { path: string }) => {
   return (
     <svg
       width='64px'
