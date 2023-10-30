@@ -21,10 +21,10 @@ const BottomAboutCard = () => {
     'text-center text-[var(--text-light)] max-1250:text-sm max-1000:text-base max-500:text-sm max-350:text-xs whitespace-nowrap';
 
   return (
-    <div className='flex gap-6 max-1000:flex-col'>
+    <div className='flex gap-6 max-1000:flex-col max-500:gap-4'>
       <div
-        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6
-      max-350:p-4 flex flex-col'
+        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6 max-500:mt-4
+      max-350:p-4 flex flex-col max-500:gap-4'
       >
         <div
           className='text-xl font-semibold text-[var(--text-dark)] 
@@ -32,12 +32,12 @@ const BottomAboutCard = () => {
         >
           Clean Code
         </div>
-        <div className='mt-4'>
+        <div className='mt-6'>
           <CleanCode />
         </div>
       </div>
       <motion.ul
-        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6 max-410:p-4'
+        className='card-box-shadow p-8 rounded-3xl bg-[var(--background-light)] w-full mt-6 max-410:p-4 max-500:mt-0'
         initial='closed'
         whileInView='open'
         viewport={{ once: true }}

@@ -9,7 +9,7 @@ const TopAboutCards = () => {
   return (
     <div
       className='grid grid-rows-2 grid-cols-[1fr_0.5fr_0.5fr] gap-6 
-      max-1000:grid-rows-4 max-1000:grid-cols-2 max-410:flex max-410:flex-col'
+      max-1000:grid-rows-4 max-1000:grid-cols-2 max-410:flex max-410:flex-col max-500:gap-4'
     >
       <motion.div
         initial={{ scale: 0 }}

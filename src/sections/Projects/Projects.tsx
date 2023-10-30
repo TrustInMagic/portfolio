@@ -21,7 +21,7 @@ const Projects = () => {
         title='Projects'
         description='A small preview of my projects'
       />
-      <div className='grid grid-cols-2 grid-rows-2 gap-8 max-1000:flex max-1000:flex-col max-1000:gap-12'>
+      <div className='grid grid-cols-2 grid-rows-2 gap-8 max-1000:flex max-1000:flex-col max-1000:gap-12 max-500:gap-6'>
         <div
           onClick={() =>
             router.push('https://github.com/TrustInMagic/ecommerce-store')
@@ -60,7 +60,7 @@ const Projects = () => {
         </div>
       </div>
       <button
-        className='text-[var(--fillings)] text-xl font-medium mt-20'
+        className='text-[var(--fillings)] text-xl font-medium mt-20 max-500:mt-12'
         onClick={() => router.push('https://github.com/TrustInMagic')}
         onMouseDown={() => clickSound()}
         onMouseUp={() => clickSound()}

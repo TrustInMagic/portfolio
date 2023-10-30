@@ -300,7 +300,7 @@ const Project = () => {
       >
         <button
           className='absolute left-0 top-1 cursor-pointer text-[var(--fillings)] max-410:text-sm'
-          onClick={() => router.push('/#portfolio')}
+          onClick={() => router.push('/#projects')}
           onMouseDown={() => clickSound()}
           onMouseUp={() => clickSound()}
         >

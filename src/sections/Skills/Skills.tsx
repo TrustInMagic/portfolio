@@ -28,7 +28,7 @@ const Skills = () => {
         title='Skills'
         description='What I use to turn an idea into reality'
       />
-      <div className='grid grid-cols-10 grid-rows-3 gap-5 max-650:flex max-650:flex-col'>
+      <div className='grid grid-cols-10 grid-rows-3 gap-5 max-650:flex max-650:flex-col max-500:gap-4'>
         <motion.div
           className={`col-span-10 ${commonStyle}`}
           variants={itemVariants}

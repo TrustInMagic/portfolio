@@ -79,7 +79,7 @@ const Contact = () => {
         Alternatively, you can find me on the platforms listed below.
       </div>
       {showForm && (
-        <div className='grid grid-cols-[1fr_0.4fr] gap-5 mt-8 w-full max-1000:flex max-1000:flex-col'>
+        <div className='grid grid-cols-[1fr_0.4fr] gap-5 mt-8 w-full max-1000:flex max-1000:flex-col max-500:gap-4'>
           <motion.form
             onSubmit={sendEmail}
             ref={formRef}
