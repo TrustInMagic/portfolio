@@ -7,7 +7,7 @@ import SocialButton from './components/SocialButton';
 import EmailCopyPopUp from '@/components/Notifications/EmailCopyPopUp';
 import EmailSentPopUp from '@/components/Notifications/EmailSentPopUp';
 // framer motion
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 // next
 import { useRouter } from 'next/navigation';
 // emailjs
@@ -28,6 +28,8 @@ const Contact = () => {
 
   const router = useRouter();
   const formRef = React.useRef<HTMLFormElement>(null);
+  const descriptionRef = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(descriptionRef);
   const { screenWidth } = useScreenSize();
 
   const commonStyle =
@@ -64,8 +66,10 @@ const Contact = () => {
   };
 
   React.useEffect(() => {
-    setTimeout(() => setShowForm(true), 100);
-  }, []);
+    if (isInView) {
+      setShowForm(true);
+    }
+  }, [isInView]);
 
   return (
     <div className='flex flex-col py-36 items-center max-500:py-20'>
@@ -73,7 +77,10 @@ const Contact = () => {
         title='Contact'
         description='Reach out to me any way you want'
       />
-      <div className='-mt-10 text-[var(--text-light)] text-center max-410:text-sm'>
+      <div
+        className='-mt-10 text-[var(--text-light)] text-center max-410:text-sm'
+        ref={descriptionRef}
+      >
         Fill in the form on the left with your information and I will get back
         to you as soon as possible. <br />
         Alternatively, you can find me on the platforms listed below.

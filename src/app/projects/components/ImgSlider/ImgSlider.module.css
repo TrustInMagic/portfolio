@@ -1,7 +1,7 @@
 .img-slider {
   position: relative;
   width: 100%;
-  min-height: 60vh;
+  height: min(550px, 60vh);
 }
 
 .img {
@@ -114,19 +114,19 @@
   }
 
   .img-slider {
-    min-height: 25vh;
+    height: 25vh;
   }
 }
 
 @media screen and (max-width: 350px) {
   .img-slider {
-    min-height: 20vh;
+    height: 20vh;
   }
 }
 
 @media screen and (max-height: 500px) {
   .img-slider {
-    min-height: 90vh;
+    height: 90vh;
   }
 
   .dot {
