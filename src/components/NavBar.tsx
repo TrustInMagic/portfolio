@@ -70,7 +70,7 @@ const NavBar: React.FC<NavBarProps> = ({
 
   return (
     <motion.div
-      initial={{ scale: 0 }}
+      initial={{ scale: 0.01 }}
       animate={{ scale: 1 }}
       className='fixed top-5 flex justify-between w-full z-10'
     >
