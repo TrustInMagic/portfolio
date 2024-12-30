@@ -1,0 +1,11 @@
+1:HL["/_next/static/css/277af64a4888e957.css",{"as":"style"}]
+0:["OgaNFJ03gFL7XIkqjA5dM",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/277af64a4888e957.css","precedence":"next"}]],"$L3"]]]]
+4:HL["/_next/static/css/1fb1a1c551f690fe.css",{"as":"style"}]
+5:I{"id":4557,"chunks":["185:static/chunks/app/layout-ae563debe1502c59.js"],"name":"","async":false}
+6:I{"id":9945,"chunks":["185:static/chunks/app/layout-ae563debe1502c59.js"],"name":"","async":false}
+7:I{"id":7767,"chunks":["272:static/chunks/webpack-696d711baff9a74c.js","971:static/chunks/fd9d1056-d4efde728a839238.js","596:static/chunks/596-79ebcb48bc2a8fe2.js"],"name":"default","async":false}
+8:I{"id":7920,"chunks":["272:static/chunks/webpack-696d711baff9a74c.js","971:static/chunks/fd9d1056-d4efde728a839238.js","596:static/chunks/596-79ebcb48bc2a8fe2.js"],"name":"default","async":false}
+9:I{"id":4839,"chunks":["272:static/chunks/webpack-696d711baff9a74c.js","971:static/chunks/fd9d1056-d4efde728a839238.js","596:static/chunks/596-79ebcb48bc2a8fe2.js"],"name":"default","async":false}
+a:I{"id":9816,"chunks":["526:static/chunks/526-6bab591d1e2f1ab1.js","283:static/chunks/283-28c0837acfffea0e.js","931:static/chunks/app/page-8131bd65a6a2abe1.js"],"name":"","async":false}
+2:[["$","html",null,{"lang":"en","children":["$","$L5",null,{"children":["$","$L6",null,{"children":["$","body",null,{"className":"__className_d65c78","children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$L8",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":[["$","$L9",null,{"propsForComponent":{"params":{}},"Component":"$a"}],null],"segment":"__PAGE__"},"styles":[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/1fb1a1c551f690fe.css","precedence":"next"}]]}]}]}]}]}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Tim Ionescu | Software Engineer"}],["$","meta","2",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","link","3",{"rel":"icon","href":"/icon.png?8a5c054dbebab41f","type":"image/png","sizes":"500x500"}]]
